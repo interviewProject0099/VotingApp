@@ -1,7 +1,6 @@
 package com.app.voting.service;
 
 import com.app.voting.dto.CandidateResult;
-import com.app.voting.entity.Candidate;
 import com.app.voting.repository.CandidateRepository;
 import com.app.voting.repository.VoteCastRepository;
 import lombok.RequiredArgsConstructor;
