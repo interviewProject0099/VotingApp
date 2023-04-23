@@ -12,6 +12,6 @@ services:
     image: springdockercompose:latest
     container_name: "springdockercompose"
     ports:
-      - 8080:8080
+      - "8080:8080"
     links:
       - database
