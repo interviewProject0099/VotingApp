@@ -11,14 +11,15 @@ import javax.persistence.Table;
 
 @Entity
 @Data
-@Table(name = "candidates")
-public class Candidate {
+@Table(name = "voters")
+public class Voter {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "candidate_seq")
-    @SequenceGenerator(name = "candidate_seq", sequenceName = "candidate_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "voter_seq")
+    @SequenceGenerator(name = "voter_seq", sequenceName = "voter_seq", allocationSize = 1)
     private Long id;
 
     private String name;
-}
 
+    private boolean hasVoted;
+}
