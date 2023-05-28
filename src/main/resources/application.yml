@@ -9,8 +9,8 @@ management:
 
 info:
   application:
-    name: voting_app
-    description: Voting app.
+    name: forecast_app
+    description: Forecast app.
     author: For interview
     version: '@project.version@'
 spring:
@@ -18,3 +18,7 @@ spring:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
   profiles:
     active: dev
+
+forecast:
+  api:
+    url: "https://archive-api.open-meteo.com/v1/archive?hourly=precipitation&daily=sunrise&timezone=auto"
