@@ -8,6 +8,7 @@ import com.app.forecast.entity.EndpointCall;
 import com.app.forecast.repository.EndpointCallsLoggerRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -27,6 +28,7 @@ public class ForecastService {
     private final ForecastWebClient forecastWebClient;
     private final EndpointCallsLoggerRepository endpointCallsLoggerRepository;
 
+    @Cacheable(cacheNames = "ForecastByCoordinates")
     public LocationInfoResponseDaysList getForecastByCoordinates(String latitude, String longitude) {
         endpointCallsLoggerRepository.save(new EndpointCall(latitude, longitude));
         validateCoordinates(latitude, longitude);
